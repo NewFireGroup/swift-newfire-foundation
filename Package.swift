@@ -5,10 +5,17 @@ import PackageDescription
 
 let package = Package(
     name: "swift-newfire-foundation",
+    platforms: [
+        .iOS(.v26),
+        .macOS(.v26),
+        .tvOS(.v26),
+        .watchOS(.v26),
+        .visionOS(.v26)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "swift-newfire-foundation",
+            name: "NFGFoundation",
             targets: ["swift-newfire-foundation"]
         ),
     ],
