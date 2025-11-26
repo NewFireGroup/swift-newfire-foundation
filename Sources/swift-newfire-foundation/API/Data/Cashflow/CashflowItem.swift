@@ -13,10 +13,11 @@ public struct CashflowItem: ACEntity {
     public var systemImage: String
     public var type: CashflowType = .none
     public var category: Category?
+    public var repeating: Frequency?
     
     public var amount: Decimal = 0
 
-    public init(id: String? = nil, name: String? = nil, type: CashflowType? = nil, category: Category? = nil, amount: Decimal? = nil) {
+    public init(id: String? = nil, name: String? = nil, type: CashflowType? = nil, category: Category? = nil, amount: Decimal? = nil, repeating: Frequency? = nil) {
         self.id = id ?? UUID().uuidString
         self.name = name ?? ""
         self.category = category ?? nil
@@ -24,6 +25,8 @@ public struct CashflowItem: ACEntity {
         
         self.type = type ?? .none
         self.amount = amount ?? 0
+        
+        self.repeating = repeating
     }
     
     static func sample() -> CashflowItem {
