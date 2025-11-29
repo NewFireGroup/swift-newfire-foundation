@@ -28,6 +28,8 @@ public struct TextEditorPlaceHolder: View {
                 .frame(minHeight: minHeight)
                 .accessibilityLabel(accessibilityLabel ?? placeholder)
         }
+        // Keep the stack pinned to the top-left within its parent row if it grows
+        .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 }
 
@@ -41,3 +43,4 @@ public struct TextEditorPlaceHolder: View {
         }
     }
 }
+

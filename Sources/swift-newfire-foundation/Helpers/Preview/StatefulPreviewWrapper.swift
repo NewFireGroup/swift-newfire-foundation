@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Simple helper to preview bindings
-public struct StatefulPreviewWrapper<Value, Content: View>: View {
+internal struct StatefulPreviewWrapper<Value, Content: View>: View {
     @State var value: Value
     var content: (Binding<Value>) -> Content
 

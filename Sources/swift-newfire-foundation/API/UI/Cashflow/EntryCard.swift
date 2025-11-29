@@ -85,19 +85,26 @@ struct EntryCard: View {
         // Use Locale currency; fall back to USD
         let code = Locale.current.currency?.identifier ?? "USD"
         // Convert Decimal to a format-friendly type using FormatStyle
-        return entry.amount.formatted(.currency(code: code))
+        return (entry.amount.formatted(.currency(code: code)))
     }
 }
 
 #Preview {
-    ZStack {
-        List {
-            EntryCard(entry: .constant(CashflowItem(
-                name: "Paycheck",
-                type: .income,
-                category: Category(name: "Salary", group: "Income"),
-                amount: 2500)
-            ))
-        }
+    // Provide a reasonable sample for the preview
+    VStack(spacing: 16) {
+        EntryCard(entry: .constant(CashflowItem(
+            name: "Paycheck",
+            type: .income,
+            category: Category(name: "Salary", group: "Income"),
+            amount: 2500.25
+        )))
+        
+        EntryCard(entry: .constant(CashflowItem(
+            name: "Groceries",
+            type: .expense,
+            category: Category(name: "Groceries", group: "Food"),
+            amount: 145.80
+        )))
     }
+    .padding()
 }
