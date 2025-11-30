@@ -31,7 +31,9 @@ public struct EntryEdit: View {
                     }
                         .accessibilityLabel("Category")
                     TextField("Amount", value: $entry.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        #if canImport(UIKit)
                         .keyboardType(.decimalPad)
+                        #endif
                         .accessibilityLabel("Amount")
                 }
                 

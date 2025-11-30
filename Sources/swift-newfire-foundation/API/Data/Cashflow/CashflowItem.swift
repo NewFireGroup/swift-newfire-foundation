@@ -30,22 +30,34 @@ public struct CashflowItem: ACEntity {
     }
     
     static func sample() -> CashflowItem {
-        return CashflowItem(
+        CashflowItem(
             name: "Paycheck",
             type: .income,
             category: Category(name: "Salary", group: "Income"),
-            amount: 2500)
+            amount: 2500.25
+        )
     }
     
     static func samples() -> [CashflowItem] {
-        return [
+         [
             CashflowItem(
                 name: "Paycheck",
                 type: .income,
                 category: Category(name: "Salary", group: "Income"),
-                amount: 2500),
-            CashflowItem(name: "Weekly Groceries"),
-            CashflowItem(name: "Netflix Subscription")
+                amount: 2500.25
+            ),
+            CashflowItem(
+                name: "Groceries",
+                type: .expense,
+                category: Category(name: "Groceries", group: "Food"),
+                amount: 145.80
+            ),
+            CashflowItem(
+                name: "Netflix",
+                type: .expense,
+                category: Category(name: "Subscriptions", group: "Bills"),
+                amount: 34.80
+            )
         ]
     }
 }

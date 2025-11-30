@@ -64,11 +64,15 @@ struct EntryCard: View {
         .padding(14)
         .background(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
+            #if canImport(UIKit)
                 .fill(Color(.secondarySystemBackground))
+            #endif
         )
         .overlay(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
+            #if canImport(UIKit)
                 .stroke(Color(.separator), lineWidth: 0.5)
+            #endif
         )
         .accessibilityElement(children: .contain)
     }
@@ -90,21 +94,11 @@ struct EntryCard: View {
 }
 
 #Preview {
-    // Provide a reasonable sample for the preview
-    VStack(spacing: 16) {
-        EntryCard(entry: .constant(CashflowItem(
-            name: "Paycheck",
-            type: .income,
-            category: Category(name: "Salary", group: "Income"),
-            amount: 2500.25
-        )))
-        
-        EntryCard(entry: .constant(CashflowItem(
-            name: "Groceries",
-            type: .expense,
-            category: Category(name: "Groceries", group: "Food"),
-            amount: 145.80
-        )))
+    
+    StatefulPreviewWrapper(CashflowItem.samples()) {
+        entries in
+        ForEach(entries, id: \.id) { entry in
+            EntryCard(entry: entry)
+        }
     }
-    .padding()
 }
