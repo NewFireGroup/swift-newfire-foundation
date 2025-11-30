@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "0D3CCA1A-04CB-44C6-B786-D4B3DFFE2FA1",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "swift-newfire-foundationTests",
+        "name" : "swift-newfire-foundationTests"
+      }
+    }
+  ],
+  "version" : 1
+}
