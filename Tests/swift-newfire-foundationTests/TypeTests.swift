@@ -1,7 +1,7 @@
 import Testing
 @testable import swift_newfire_foundation
 
-@Suite("CashflowType tests")
+@Suite("Cashflow Type tests")
 struct CashflowTypeTests {
 
     @Test("Raw values match expected strings")

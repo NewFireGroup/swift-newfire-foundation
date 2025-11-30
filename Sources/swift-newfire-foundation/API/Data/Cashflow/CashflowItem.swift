@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CashflowItem: ACEntity {
+public class CashflowItem: ACEntity {
     public var id: String
     public var name: String
     public var systemImage: String
@@ -28,7 +28,9 @@ public struct CashflowItem: ACEntity {
         
         self.repeating = repeating
     }
-    
+}
+
+extension  CashflowItem {
     static func sample() -> CashflowItem {
         CashflowItem(
             name: "Paycheck",

@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import swift_newfire_foundation
 
-@Suite("CashflowItem tests")
+@Suite("Cashflow Item tests")
 struct CashflowItemTests {
 
     @Test("Default initializer sets expected defaults")

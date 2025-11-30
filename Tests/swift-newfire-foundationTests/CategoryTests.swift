@@ -1,7 +1,7 @@
 import Testing
 @testable import swift_newfire_foundation
 
-@Suite("Category Tests")
+@Suite("Cashflow Category Tests")
 struct CategoryTests {
 
     @Test("Default initializer sets sensible defaults")
