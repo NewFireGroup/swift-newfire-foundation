@@ -18,4 +18,8 @@ public struct CashflowEntries {
         .init(CashflowEntry.entrySamples())
     }
     
+    public func byDate() -> [CashflowEntry] {
+        entries.sorted(by: { $0.date < $1.date })
+    }
+    
 }
