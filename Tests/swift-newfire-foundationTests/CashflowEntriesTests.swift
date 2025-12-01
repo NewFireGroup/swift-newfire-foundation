@@ -66,4 +66,6 @@ struct CashflowEntriesTests {
         #expect(ordered[1].id == e3.id)
         #expect(ordered[2].id == e1.id)
     }
+    
+    
 }
