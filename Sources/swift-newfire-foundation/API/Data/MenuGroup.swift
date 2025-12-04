@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-@Model public class MenuGroup: ACEntity {
+open class MenuGroup: ACEntity {
     public var id: String
     public var name: String
     public var systemImage: String
@@ -14,8 +14,17 @@ import SwiftData
             self.name = name ?? "New Item"
             self.systemImage = systemImage ?? "cloud.fill"
             
-        }
-} 
+    }
+    
+    public static func == (lhs: MenuGroup, rhs: MenuGroup) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+}
 
 extension MenuGroup {
     static func samples() -> [MenuGroup] {

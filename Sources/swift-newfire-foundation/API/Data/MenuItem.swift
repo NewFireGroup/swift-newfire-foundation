@@ -1,13 +1,13 @@
 import SwiftUI
 import SwiftData
 
-@Model public class MenuItem: ACEntity {
+open class MenuItem: ACEntity {
     public var id: String
     public var name: String
     public var systemImage: String
     
     public init(
-        id: String? = nil, 
+        id: String? = nil,
         _ name: String? = nil,
         systemImage: String? = nil) {
             self.id = id ?? UUID().uuidString
